@@ -3,8 +3,10 @@ package de.dytanic.cloudnet.ext.cloudperms.sponge;
 import com.google.inject.Inject;
 import de.dytanic.cloudnet.common.Validate;
 import de.dytanic.cloudnet.driver.CloudNetDriver;
+import de.dytanic.cloudnet.ext.cloudperms.sponge.listener.SpongeCloudNetCloudPermissionsPlayerListener;
 import de.dytanic.cloudnet.wrapper.Wrapper;
 import org.slf4j.Logger;
+import org.spongepowered.api.Sponge;
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.event.game.state.GameStartedServerEvent;
@@ -35,7 +37,7 @@ public final class SpongeCloudNetCloudPermissionsPlugin {
 
     @Listener
     public void onEnable(GameStartedServerEvent event) {
-
+        Sponge.getEventManager().registerListeners(this,new SpongeCloudNetCloudPermissionsPlayerListener(this));
     }
 
     @Listener

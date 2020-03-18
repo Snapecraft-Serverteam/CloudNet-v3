@@ -18,7 +18,7 @@ public class SpongeCloudNetCloudPermissionsPlayerListener {
     public void onJoin(final ClientConnectionEvent.Login event){
         CloudPermissionsHelper.initPermissionUser(event.getProfile().getUniqueId(), event.getProfile().getName().get(), Sponge.getServer().getOnlineMode());
 
-        Sponge.getEventManager().registerListeners(this,new SpongeCloudNetCloudPermissionsPlayerListener(plugin));
+
     }
 
     @Listener
