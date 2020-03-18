@@ -1,8 +1,10 @@
 package de.dytanic.cloudnet.ext.cloudperms.sponge;
 
+import com.google.inject.Inject;
 import de.dytanic.cloudnet.common.Validate;
 import de.dytanic.cloudnet.driver.CloudNetDriver;
 import de.dytanic.cloudnet.wrapper.Wrapper;
+import org.slf4j.Logger;
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.event.game.state.GameStartedServerEvent;
@@ -21,7 +23,13 @@ import java.util.concurrent.ExecutionException;
 )
 public final class SpongeCloudNetCloudPermissionsPlugin {
 
+    @Inject
+    private Logger logger;
+
     private SpongeCloudNetCloudPermissionsPlugin instance;
+
+    public SpongeCloudNetCloudPermissionsPlugin() {
+    }
 
     @Listener
     public void onStart(){
